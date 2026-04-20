@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Price Predictor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <section class="card hero">
+      <div>
+        <p class="eyebrow">Phase 1 · Static web deployment</p>
+        <h1>Car Price Predictor</h1>
+        <p class="lead">
+          This page loads a scikit-learn export from <code>model.json</code> and
+          uses <code>ML.js</code> in the browser for prediction without any backend.
+        </p>
+      </div>
+      <div class="metrics" id="metrics-box">
+        <div class="metric">
+          <span>MAE</span>
+          <strong id="metric-mae">-</strong>
+        </div>
+        <div class="metric">
+          <span>RMSE</span>
+          <strong id="metric-rmse">-</strong>
+        </div>
+        <div class="metric">
+          <span>R²</span>
+          <strong id="metric-r2">-</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <section class="card form-card">
+        <h2>Input features</h2>
+        <form id="prediction-form"></form>
+      </section>
+
+      <section class="card result-card">
+        <h2>Prediction output</h2>
+        <div id="status-pill" class="pill neutral">Loading model...</div>
+
+        <div class="prediction-box">
+          <span>Predicted price</span>
+          <strong id="prediction-value">-</strong>
+        </div>
+
+        <div class="bar">
+          <div id="bar-fill" class="bar-fill"></div>
+        </div>
+
+        <p id="prediction-text" class="prediction-text">
+          Once the model is loaded, enter the vehicle specifications and click the button to generate a prediction.
+        </p>
+
+        <div class="details">
+          <div>
+            <span>Model type</span>
+            <strong id="detail-model-type">-</strong>
+          </div>
+          <div>
+            <span>Target</span>
+            <strong id="detail-target">-</strong>
+          </div>
+          <div>
+            <span>Dataset file</span>
+            <strong id="detail-dataset">-</strong>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="https://www.lactame.com/lib/ml/6.0.0/ml.min.js"></script>
+  <script src="predict.js"></script>
+</body>
+</html>
